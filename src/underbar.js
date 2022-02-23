@@ -87,6 +87,29 @@
 
   // Return all elements of an array that pass a truth test.
   _.filter = function(collection, test) {
+
+    // [1 ,2, 3] test: isOdd(1)
+    // var isOdd = function(num) { return num % 2 !== 0; };
+    var result = [];
+
+    _.each(collection, function(item, index, collection) {
+      if ( test(item) ) {
+        result.push(item);
+      }
+    });
+
+    // _.each(collection, function(item) {
+    //   if (test(item)) {
+    //     filtered.push(item);
+    //   }
+
+    // for (var i = 0; i < collection.length; i++) {
+    //   if (test(collection[i])) {
+    //     result.push(collection[i]);
+    //   }
+    // };
+
+    return result;
   };
 
   // Return all elements of an array that don't pass a truth test.
